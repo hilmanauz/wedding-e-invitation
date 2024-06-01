@@ -36,15 +36,10 @@ export default function Home() {
     }, [opened]);
 
     React.useEffect(() => {
-        AOS.refresh();
-    }, []);
-
-    React.useEffect(() => {
         if (matches === undefined) return;
         matches
             ? setTest(true)
             : AOS.init({
-                  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
                   startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
                   initClassName: "aos-init", // class applied after initialization
                   animatedClassName: "aos-animate", // class applied on animation
@@ -276,7 +271,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -292,7 +287,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -308,7 +303,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -324,7 +319,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -340,7 +335,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -361,7 +356,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -377,7 +372,7 @@ export default function Home() {
                                         <div
                                             className={classNames(
                                                 "image-wrap",
-                                                test && "aos-init"
+                                                test && "aos-init aos-animate"
                                             )}
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
@@ -394,7 +389,7 @@ export default function Home() {
                                     <div
                                         className={classNames(
                                             "logo-wrap",
-                                            test && "aos-init"
+                                            test && "aos-init aos-animate"
                                         )}
                                         data-aos="fade-up"
                                         data-aos-duration="1200"
@@ -411,7 +406,7 @@ export default function Home() {
                                         data-aos-duration="1200"
                                         data-aos-delay="700"
                                         className={classNames(
-                                            test && "aos-init"
+                                            test && "aos-init aos-animate"
                                         )}
                                     >
                                         Hasnaa &amp; Hilman
@@ -421,7 +416,7 @@ export default function Home() {
                                     <div
                                         className={classNames(
                                             "link-wrap",
-                                            test && "aos-init"
+                                            test && "aos-init aos-animate"
                                         )}
                                         data-aos="fade-up"
                                         data-aos-duration="1200"
