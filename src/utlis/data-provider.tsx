@@ -22,7 +22,7 @@ const DataProvider = (props: React.PropsWithChildren<{}>) => {
                 setData,
             }}
         >
-            {props.children}
+            <React.Suspense>{props.children}</React.Suspense>
         </DataContext.Provider>
     );
 };
