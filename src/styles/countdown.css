@@ -1,0 +1,23 @@
+.perspective {
+    perspective: 180px;
+}
+@media (min-width: 768px) {
+    .perspective {
+        perspective: 400px;
+    }
+}
+.transform-3d {
+    transform-style: preserve-3d;
+}
+.origin-bottom {
+    transform-origin: bottom;
+}
+.backface-hidden {
+    backface-visibility: hidden;
+}
+.rotate-x-0 {
+    transform: rotateX(0deg);
+}
+.rotate-x-180 {
+    transform: rotateX(180deg);
+}
