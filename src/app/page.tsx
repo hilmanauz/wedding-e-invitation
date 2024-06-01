@@ -36,6 +36,10 @@ export default function Home() {
     }, [opened]);
 
     React.useEffect(() => {
+        AOS.refresh();
+    }, []);
+
+    React.useEffect(() => {
         if (matches === undefined) return;
         matches
             ? setTest(true)
