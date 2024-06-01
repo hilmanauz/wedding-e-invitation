@@ -1,30 +1,59 @@
 "use client";
 import { classNames } from "@/utlis/classNames";
-import { client } from "@/utlis/client";
 import { useDataContext } from "@/utlis/data-provider";
 import { useQueryParams } from "@/utlis/query-params";
+import { LoadingOverlay } from "@mantine/core";
 import Aos from "aos";
+import axios from "axios";
 import React from "react";
 import useSWR from "swr";
-import { QRCodeSVG } from "qrcode.react";
 
-export default function InvitationCard() {
+export default function Confirmation() {
     const [firstState, setFirstState] = React.useState(false);
+    const [messageStatus, setMessageStatus] = React.useState("");
     React.useEffect(() => {
         Aos.init();
         setFirstState(true);
     }, []);
-    const { setQueryParams, queryParams, removeQueryParams } = useQueryParams<{
+    const { queryParams, removeQueryParams } = useQueryParams<{
         to: string;
         showQR: boolean;
+        "xc-token": string;
     }>();
-    const { setData, data } = useDataContext();
-    const {} = useSWR([queryParams.get("to")], async ([to]) => {
-        const { data } = await client.get(
-            `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`
+    const xcToken = queryParams.get("xc-token");
+    React.useEffect(() => {
+        if (xcToken) {
+            localStorage.setItem("xc-token", xcToken);
+            removeQueryParams(["xc-token"]);
+            setMessageStatus("You're an admin!");
+        }
+    }, [removeQueryParams, xcToken]);
+    const { setData } = useDataContext();
+    const { error, data } = useSWR(
+        [queryParams.get("to"), xcToken],
+        async ([to, token]) => {
+            const { data } = await axios.get(
+                `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
+                {
+                    headers: {
+                        "xc-token": token,
+                    },
+                }
+            );
+            setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
+            return data;
+        }
+    );
+
+    const { isLoading } = useSWR([data], async ([data]) => {
+        if (!data) return;
+        await axios.post(
+            `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan/${data.Id}`,
+            {
+                absensi: true,
+            }
         );
-        setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
-        return data;
+        setMessageStatus(`Thanks ${data.Nama} for confirmation attendant!`);
     });
 
     return (
@@ -32,13 +61,6 @@ export default function InvitationCard() {
             <section className="h-full w-full invitation-pane">
                 <section className="protocol protocol-04 h-full w-full">
                     <div className="inner-invitation text-center flex flex-col">
-                        <h1
-                            className="save-date-title aos-init mb-5"
-                            data-aos="zoom-in"
-                            data-aos-duration="1000"
-                        >
-                            Invitation Card
-                        </h1>
                         <div className="flex-auto">
                             <div className="ornaments-wrapper">
                                 <div className="protocol-frame">
@@ -149,24 +171,20 @@ export default function InvitationCard() {
                                     data-aos-duration="1000"
                                     data-aos-delay="150"
                                 >
-                                    <div className="icon-wrap">
-                                        <QRCodeSVG
-                                            value={`${
-                                                process.env
-                                                    .NEXT_PUBLIC_BASE_URL ||
-                                                "http://localhost:3000"
-                                            }/confirmation?to=${data?.Nama}`}
-                                        />
+                                    <div className="icon-wrap !justify-center relative">
+                                        {isLoading ? (
+                                            <LoadingOverlay />
+                                        ) : (
+                                            <h4
+                                                className="!text-lg flex flex-col !capitalize"
+                                                data-copy="2880135476"
+                                            >
+                                                {error
+                                                    ? error?.message
+                                                    : messageStatus}
+                                            </h4>
+                                        )}
                                     </div>
-                                    <h4
-                                        className="bank-account-number !text-sm flex flex-col !capitalize"
-                                        data-copy="2880135476"
-                                    >
-                                        Kepada Yth.{" "}
-                                        <span className="!text-base">
-                                            {data?.Nama}
-                                        </span>
-                                    </h4>
                                 </div>
                                 <div
                                     className="quote-wrap !p-3 max-w-[250px] aos-init"
@@ -175,8 +193,7 @@ export default function InvitationCard() {
                                     data-aos-delay="150"
                                 >
                                     <p className="quote-caption text-center">
-                                        Please show this QR-code for your
-                                        attendant!
+                                        {data?.Nama}
                                     </p>
                                 </div>
                             </div>

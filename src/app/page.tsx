@@ -18,10 +18,11 @@ export default function Home() {
     const [isMusicPlay, setIsMusicPlay] = React.useState(false);
     const { setData, data } = useDataContext();
     const [test, setTest] = React.useState(false);
-    const { setQueryParams, queryParams, removeQueryParams } = useQueryParams<{
+    const { queryParams } = useQueryParams<{
         to: string;
         showQR: boolean;
     }>();
+    const [audio, setAudio] = React.useState<Partial<HTMLAudioElement>>();
     const matches = useMediaQuery("(max-width: 960px)");
     React.useEffect(() => {
         const timeout = setTimeout(() => {
@@ -52,22 +53,25 @@ export default function Home() {
     });
 
     const [scrollDir, setScrollDir] = React.useState<"down" | "up">();
-    // @ts-ignore
-    const audioPlayer: Partial<HTMLAudioElement> =
-        document.getElementById("audio");
+
+    React.useEffect(() => {
+        if (!document) return;
+        //@ts-ignore
+        setAudio(document?.getElementById("audio"));
+    }, []);
 
     React.useEffect(() => {
         (async () => {
-            if (audioPlayer) {
+            if (audio) {
                 if (isMusicPlay) {
-                    await audioPlayer.play?.();
+                    await audio.play?.();
                 } else {
-                    audioPlayer.pause?.();
+                    audio.pause?.();
                 }
             }
         })();
         return () => {};
-    }, [isMusicPlay, audioPlayer]);
+    }, [isMusicPlay, audio]);
 
     React.useEffect(() => {
         window.history.scrollRestoration = "manual";
@@ -171,6 +175,7 @@ export default function Home() {
                                     data-aos-duration="1000"
                                     data-aos-delay="600"
                                     style={{
+                                        // @ts-ignore
                                         "--grass":
                                             "url('/image//orn-grass.png')",
                                     }}
@@ -321,6 +326,7 @@ export default function Home() {
                                             data-aos-duration="1000"
                                             data-aos-delay="600"
                                             style={{
+                                                // @ts-ignore
                                                 "--grass":
                                                     "url('/image//orn-grass.png')",
                                             }}
@@ -470,6 +476,7 @@ export default function Home() {
                                         data-aos-duration="1000"
                                         data-aos-delay="400"
                                         style={{
+                                            // @ts-ignore
                                             "--grass":
                                                 "url('/image//orn-grass.png')",
                                         }}
@@ -1807,6 +1814,7 @@ export default function Home() {
                                     data-aos-duration="1000"
                                     data-aos-delay="500"
                                     style={{
+                                        // @ts-ignore
                                         "--grass":
                                             "url('/image//orn-grass.png')",
                                     }}
@@ -1886,9 +1894,18 @@ export default function Home() {
                         </div>
                     </section>
                     <section className="footer">
-                        <div className="footer-inner ">
-                            <p>Powered by</p>
-                        </div>
+                        <a href="https://github.com/hilmanauz" target="_blank">
+                            <div className="footer-inner flex">
+                                <p className="!mr-1 cursor-pointer">
+                                    Made With{" "}
+                                </p>
+                                <img
+                                    src="/image/love.gif"
+                                    alt="Orn 1"
+                                    className="!w-6 cursor-pointer"
+                                />
+                            </div>
+                        </a>
                     </section>
                 </section>
             </section>
