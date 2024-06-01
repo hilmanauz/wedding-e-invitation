@@ -59,7 +59,7 @@ export default function Home() {
         //@ts-ignore
         setAudio(document?.getElementById("audio"));
     }, []);
-
+    console.log(audio);
     React.useEffect(() => {
         (async () => {
             if (audio) {

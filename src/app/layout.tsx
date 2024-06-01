@@ -10,7 +10,12 @@ import "@mantine/core/styles.css";
 
 export const metadata: Metadata = {
     title: "Hasnaa & Hilman | HH Wedding",
-    description: "29 Juni 2024",
+    description:
+        "Hi, You're invited to our wedding ceremony - Hasnaa & Hilman Wedding - Saturday, June 29th 2024",
+    openGraph: {
+        type: "article",
+        images: "https://noco.klabs.dev/download/noco/Project/image/image/xPAmYum1SIrz4WxvNp.png",
+    },
 };
 
 export default function RootLayout({
