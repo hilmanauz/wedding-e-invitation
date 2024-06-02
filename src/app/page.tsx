@@ -820,7 +820,7 @@ export default function Home() {
                                             data-aos-duration="1000"
                                         >
                                             Daughter of Mr. Djadono &amp; Mrs.
-                                            Sumiyati
+                                            Fenny Widyaningrum
                                         </p>
                                         <div
                                             className="couple-link-wrap aos-init"
@@ -965,7 +965,7 @@ export default function Home() {
                                     >
                                         <a
                                             className="add-to-calendar"
-                                            href="https://calendar.app.google/xf1xPov1WhPheYUm9"
+                                            href="https://calendar.app.google/gfp8xDN8VPpeZdVW9"
                                             target="_blank"
                                             rel="nofollow"
                                             id="addToCalendar"
