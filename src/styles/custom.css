@@ -10,6 +10,7 @@ body.hasnaa-hilman {
     --heading-weight: 400;
     --heading-size: calc(9vw + 0.864px);
     --heading-count-size: calc(7vw + 0.864px);
+    --heading-footnote-size: calc(6vw + 0.864px);
     --heading-sign-size: calc(2vw + 0.864px);
     --heading-lettercase: none;
 
@@ -86,6 +87,7 @@ body.hasnaa-hilman {
     body.hasnaa-hilman {
         --heading-size: 44px;
         --heading-count-size: 34px;
+        --heading-footnote-size: 25px;
         --body-main-text-size: 20px;
         --body-text-size: 18px;
         --main-text-size: 15px;
@@ -96,6 +98,7 @@ body.hasnaa-hilman {
     body.hasnaa-hilman {
         --heading-size: 44px;
         --heading-count-size: 34px;
+        --heading-footnote-size: 25px;
         --body-main-text-size: 20px;
         --body-text-size: 18px;
         --main-text-size: 15px;
@@ -2411,27 +2414,28 @@ section.cover .inner .foot .torsvp__btn:hover {
     position: relative;
 }
 .footnote .footnote-title {
-    max-width: 260px;
+    /* max-width: 300px; */
     margin: 0 auto;
-    font-size: calc(var(--heading-size) + var(--fs-extra-8));
+    font-size: calc(var(--body-main-text-size));
     color: var(--text-primary);
 }
-
+/* 
 @media (min-width: 200px) and (max-width: 961px) {
     .footnote .footnote-title {
-        max-width: 235px;
+        max-width: 250px;
     }
-}
+} */
 
 .footnote p {
     font-weight: 400;
 }
 
 .footnote .top-text {
-    font-size: calc(var(--body-main-text-size)) !important;
+    font-size: calc(var(--heading-footnote-size)) !important;
     color: var(--text-primary);
 }
 .footnote .bottom-text {
+    font-size: calc(var(--heading-footnote-size)) !important;
     color: var(--text-primary);
 }
 .footnote .date {
@@ -2453,9 +2457,9 @@ section.cover .inner .foot .torsvp__btn:hover {
         padding: 40px 24px 80px;
         gap: 16px;
     }
-    .footnote .footnote-title {
+    /* .footnote .footnote-title {
         max-width: 260px;
-    }
+    } */
 }
 
 /* ========================================

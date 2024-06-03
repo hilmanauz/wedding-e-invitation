@@ -661,7 +661,7 @@ export default function Home() {
                                     data-aos-duration="1000"
                                 >
                                     Dengan memohon Rahmat dan Ridho Allah Azza
-                                    Wa Jalla, tanpa mengurangi rasa hormat kami
+                                    Wa Jalla, tanpa mengurangi rasa hormat, kami
                                     mengundang Bapak/Ibu/Saudara/i sekalian
                                     untuk menghadiri acara pernikahan kami:
                                 </p>{" "}
@@ -992,13 +992,13 @@ export default function Home() {
                         <div className="agenda-inner">
                             <div className="agenda-head">
                                 <h2
-                                    className="agenda-title aos-init"
+                                    className="agenda-title aos-init !font-bold"
                                     data-aos="zoom-in"
                                     data-aos-duration="1500"
                                 >
                                     Wedding Day
                                 </h2>{" "}
-                                <p
+                                {/* <p
                                     className="agenda-description aos-init"
                                     data-aos="fade-up"
                                     data-aos-duration="1200"
@@ -1006,7 +1006,7 @@ export default function Home() {
                                     Bersama-sama oleh dua keluarga, kami meminta
                                     kehormatan atas kehadiran Anda di perayaan
                                     hari pernikahan
-                                </p>{" "}
+                                </p>{" "} */}
                             </div>
                             <div className="agenda-body">
                                 <div className="event-item">
@@ -1918,28 +1918,26 @@ export default function Home() {
                                 data-aos-duration="1200"
                                 data-aos-delay="100"
                             >
-                                The wedding of
+                                جَزَاكُمُ اللهُ خَيْرًا كَثِيْرًا
                             </p>
-                            <h2
+                            <p
                                 className="footnote-title aos-init"
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                                 data-aos-delay="200"
                             >
-                                {"Hasnaa"}
-                                <br />
-                                {"&"}
-                                <br />
-                                {"Hilman"}
-                            </h2>
+                                Merupakan suatu kehormatan dan kebahagiaan bagi
+                                kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+                                untuk memberikan doa restu kepada kami
+                            </p>
                             <p
                                 className="bottom-text aos-init"
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                                 data-aos-delay="400"
                             >
-                                Bergabunglah dengan kami dalam merayakan cinta
-                                kami. Kehadiran Anda akan sangat kami hargai.
+                                وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ
+                                وَبَرَكَاتُهُ
                             </p>
                         </div>
                     </section>
