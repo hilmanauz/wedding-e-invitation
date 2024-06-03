@@ -10,7 +10,7 @@ import { FaMinusSquare } from "react-icons/fa";
 import { FaSquareCheck, FaSquareXmark } from "react-icons/fa6";
 import useSWR from "swr";
 
-const limit = 10;
+const limit = 5;
 
 export function ChatList() {
     const [submitLoading, setSubmitLoading] = React.useState(false);

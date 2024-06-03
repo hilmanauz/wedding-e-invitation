@@ -415,13 +415,19 @@ export default function Home() {
                                 <div className="details">
                                     <div
                                         className={classNames(
-                                            "link-wrap",
+                                            "link-wrap flex flex-col items-center gap-3",
                                             test && "aos-init aos-animate"
                                         )}
                                         data-aos="fade-up"
                                         data-aos-duration="1200"
                                         data-aos-delay="850"
                                     >
+                                        <div className="py-3 w-[60%] bg-white bg-opacity-75 rounded-md">
+                                            <p>Dear:</p>
+                                            <p className="!font-bold text-pretty">
+                                                Mahdy Arief
+                                            </p>
+                                        </div>
                                         <button
                                             className="link"
                                             id="startToExplore"
@@ -1156,32 +1162,62 @@ export default function Home() {
                                                 </div>
                                             </div>
                                             <div className="activity-content">
-                                                <div className="activity-head">
-                                                    <img
-                                                        src="/image/gold-01.png"
-                                                        alt="Agenda Icon"
-                                                        className="activity-icon aos-init"
-                                                        data-aos="fade-up"
-                                                        data-aos-duration="1000"
-                                                    />
-                                                    <h3
-                                                        className="activity-title aos-init"
-                                                        data-aos="zoom-in"
-                                                        data-aos-duration="1000"
-                                                        data-aos-delay="450"
-                                                        data-aos-anchor-placement="top-bottom"
-                                                    >
-                                                        Religious Ceremony
-                                                    </h3>
-                                                    <p
-                                                        className="activity-time aos-init"
-                                                        data-aos="zoom-in"
-                                                        data-aos-duration="1000"
-                                                        data-aos-delay="450"
-                                                        data-aos-anchor-placement="top-bottom"
-                                                    >
-                                                        15:30 - 17:00
-                                                    </p>
+                                                <div className="flex h-full items-center">
+                                                    <div className="activity-head flex-auto w-full">
+                                                        <img
+                                                            src="/image/gold-01.png"
+                                                            alt="Agenda Icon"
+                                                            className="activity-icon aos-init"
+                                                            data-aos="fade-up"
+                                                            data-aos-duration="1000"
+                                                        />
+                                                        <h3
+                                                            className="activity-title aos-init"
+                                                            data-aos="zoom-in"
+                                                            data-aos-duration="1000"
+                                                            data-aos-delay="450"
+                                                            data-aos-anchor-placement="top-bottom"
+                                                        >
+                                                            Akad
+                                                        </h3>
+                                                        <p
+                                                            className="activity-time aos-init"
+                                                            data-aos="zoom-in"
+                                                            data-aos-duration="1000"
+                                                            data-aos-delay="450"
+                                                            data-aos-anchor-placement="top-bottom"
+                                                        >
+                                                            15:30 - 17:00
+                                                        </p>
+                                                    </div>
+                                                    <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" />
+                                                    <div className="activity-head flex-auto w-full">
+                                                        <img
+                                                            src="/image/gold-02.png"
+                                                            alt="Agenda Icon"
+                                                            className="activity-icon aos-init"
+                                                            data-aos="fade-up"
+                                                            data-aos-duration="1000"
+                                                        />
+                                                        <h3
+                                                            className="activity-title aos-init"
+                                                            data-aos="zoom-in"
+                                                            data-aos-duration="1000"
+                                                            data-aos-delay="450"
+                                                            data-aos-anchor-placement="top-bottom"
+                                                        >
+                                                            Resepsi
+                                                        </h3>
+                                                        <p
+                                                            className="activity-time aos-init"
+                                                            data-aos="zoom-in"
+                                                            data-aos-duration="1000"
+                                                            data-aos-delay="450"
+                                                            data-aos-anchor-placement="top-bottom"
+                                                        >
+                                                            15:30 - 17:00
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <div className="event-details">
                                                     <p
@@ -1234,7 +1270,7 @@ export default function Home() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="gap" />
+                                    {/* <div className="gap" />
                                     <div className="event-head">
                                         <div className="circle" />
                                         <div className="divider-continue"></div>
@@ -1442,7 +1478,7 @@ export default function Home() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
@@ -1556,11 +1592,8 @@ export default function Home() {
                                             data-aos="fade-up"
                                             data-aos-duration="1200"
                                         >
-                                            Your blessing and coming to our
-                                            wedding are enough for us. However,
-                                            if you want to give a gift we
-                                            provide a Digital Envelope to make
-                                            it easier for you. thank you
+                                            Kindly check down below to make it
+                                            easier for you to enjoy our wedding!
                                         </p>
                                     </div>
                                     <div className="wedding-gift-body">
@@ -1629,7 +1662,7 @@ export default function Home() {
                                                             className="aos-init"
                                                         >
                                                             <h4 className="bank-name">
-                                                                RSVP
+                                                                Entrance Barcode
                                                             </h4>
                                                         </div>
                                                         <div

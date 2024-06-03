@@ -9,13 +9,15 @@ body.hasnaa-hilman {
     --heading-style: normal;
     --heading-weight: 400;
     --heading-size: calc(9vw + 0.864px);
+    --heading-sign-size: calc(2vw + 0.864px);
     --heading-lettercase: none;
 
     /* Body Text */
     --body-text-family: "EB Garamond", serif;
     --body-text-style: normal;
     --body-text-weight: 500;
-    --body-text-size: calc(4vw + 0.384px);
+    --body-text-size: calc(3.75vw + 0.384px);
+    --main-text-size: calc(3.5vw + 0.384px);
     --body-text-lettercase: none;
 
     /* Font Size Extra */
@@ -82,6 +84,7 @@ body.hasnaa-hilman {
     body.hasnaa-hilman {
         --heading-size: 44px;
         --body-text-size: 18px;
+        --main-text-size: 15px;
     }
 }
 
@@ -89,6 +92,7 @@ body.hasnaa-hilman {
     body.hasnaa-hilman {
         --heading-size: 44px;
         --body-text-size: 18px;
+        --main-text-size: 15px;
     }
 }
 
@@ -642,6 +646,18 @@ section.cover .inner .head {
 section.cover .inner .head .prime-title {
     font-size: calc(var(--heading-size) + var(--fs-extra-8));
     color: var(--text-primary);
+}
+
+@media (min-width: 200px) and (max-width: 961px) {
+    section.cover .inner .head .prime-title {
+        font-size: calc(var(--heading-size) + var(--fs-extra-6));
+    }
+    section.cover .inner .head .top-text {
+        font-size: calc(var(--body-text-size)) !important;
+    }
+    section.cover .inner .head .bottom-text {
+        font-size: calc(var(--body-text-size)) !important;
+    }
 }
 section.cover .inner .head .top-text {
     font-size: calc(var(--body-text-size) + var(--fs-extra-1));
@@ -1353,7 +1369,7 @@ section.cover .inner .foot .torsvp__btn:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(100% - 155px);
+    width: calc(95% - 155px);
     max-width: 500px;
     max-height: 300px;
     transform: translate(-50%, -50%);
@@ -1391,19 +1407,19 @@ section.cover .inner .foot .torsvp__btn:hover {
 }
 
 .activity-head .activity-title {
-    max-width: 75%;
-    font-size: calc(var(--heading-size));
+    max-width: 100%;
+    font-size: calc(var(--heading-sign-size));
     font-family: var(--heading-family);
     display: block;
     object-fit: contain;
     object-position: center;
-    margin: 0 auto 12px;
+    margin: 0 auto 2px;
 }
 
 @media (min-width: 200px) and (max-width: 961px) {
     .activity-head .activity-title {
         max-width: 100%;
-        font-size: calc(calc(8vw + 0.864px));
+        font-size: calc(calc(7vw + 0.864px));
     }
 }
 
@@ -1431,7 +1447,7 @@ section.cover .inner .foot .torsvp__btn:hover {
 /* Agenda Details */
 .event-details,
 .activity-details {
-    padding: 0 30px;
+    padding: 0;
     text-align: center;
     margin: 0 auto;
 }
@@ -1447,7 +1463,7 @@ section.cover .inner .foot .torsvp__btn:hover {
 .activity-details .activity-address {
     margin: 0 auto;
     max-width: 720px;
-    font-size: calc(var(--body-text-size));
+    font-size: calc(var(--main-text-size));
     color: var(--text-secondary);
     font-style: normal;
     font-weight: 400;
