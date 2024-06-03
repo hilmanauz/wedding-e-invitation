@@ -624,9 +624,8 @@ export default function Home() {
                                     data-aos-duration="1000"
                                     data-aos-delay="150"
                                 >
-                                    Bergabunglah dengan kami dalam merayakan
-                                    cinta kami. Kehadiran Anda akan sangat kami
-                                    hargai.
+                                    Join us in celebrating our love. Your
+                                    presence would be truly cherished.
                                 </p>{" "}
                             </div>
                             <div
@@ -662,8 +661,8 @@ export default function Home() {
                                 >
                                     Dengan memohon Rahmat dan Ridho Allah Azza
                                     Wa Jalla, tanpa mengurangi rasa hormat, kami
-                                    mengundang Bapak/Ibu/Saudara/i sekalian
-                                    untuk menghadiri acara pernikahan kami:
+                                    mengundang Bapak/Ibu/Saudara/i untuk
+                                    menghadiri acara pernikahan kami:
                                 </p>{" "}
                             </div>
                             <div className="couple-body  bride-first   ">

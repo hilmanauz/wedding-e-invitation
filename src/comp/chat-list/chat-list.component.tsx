@@ -81,8 +81,8 @@ export function ChatList() {
                         data-aos-duration="1200"
                         data-aos-delay="200"
                     >
-                        Kalian bisa tulis kata-kata ucapan dan doa untuk kita
-                        berdua disini yaaa♡
+                        Bapak/Ibu/Saudara/i dapat menuliskan ucapan dan doa pada
+                        kolom berikut ini:
                     </p>{" "}
                 </div>
                 <div className="wedding-wish-body">
