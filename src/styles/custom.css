@@ -2405,7 +2405,7 @@ section.cover .inner .foot .torsvp__btn:hover {
     padding: 40px 24px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
 }
 
 /* Details */
