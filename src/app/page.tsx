@@ -425,7 +425,7 @@ export default function Home() {
                                         <div className="py-3 w-[60%] bg-white bg-opacity-75 rounded-md">
                                             <p>Dear:</p>
                                             <p className="!font-bold text-pretty">
-                                                Mahdy Arief
+                                                {data?.Nama}
                                             </p>
                                         </div>
                                         <button
