@@ -702,20 +702,6 @@ export default function Home() {
                                             Putra dari Bpk. S. Mulyono Subagya
                                             &amp; Ibu I.G.A.A.N Srilaksmi
                                         </p>
-                                        <div
-                                            className="couple-link-wrap aos-init"
-                                            data-aos="fade-up"
-                                            data-aos-duration="1000"
-                                        >
-                                            <a
-                                                href="https://www.instagram.com/hilmanauz"
-                                                target="_blank"
-                                                className="couple-link"
-                                            >
-                                                <i className="fab fa-instagram"></i>{" "}
-                                                @hilmanauz
-                                            </a>
-                                        </div>
                                     </div>
                                     <div className="ornaments-wrapper">
                                         <div className="orn-couple-3">
@@ -832,20 +818,6 @@ export default function Home() {
                                             Putri dari Bpk. Djadono &amp; Ibu
                                             Fenny Widyaningrum
                                         </p>
-                                        <div
-                                            className="couple-link-wrap aos-init"
-                                            data-aos="fade-up"
-                                            data-aos-duration="1000"
-                                        >
-                                            <a
-                                                href="https://www.instagram.com/hasnaabrilian"
-                                                target="_blank"
-                                                className="couple-link"
-                                            >
-                                                <i className="fab fa-instagram"></i>{" "}
-                                                @hasnaabrilian
-                                            </a>
-                                        </div>{" "}
                                     </div>
                                     <div className="ornaments-wrapper">
                                         <div className="orn-couple-3">
@@ -913,75 +885,6 @@ export default function Home() {
                                                 />
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section className="save-date-wrap">
-                        <div
-                            className="save-date aos-init"
-                            data-aos="zoom-out"
-                            data-aos-duration="1200"
-                        >
-                            <div className="ornaments-wrapper">
-                                <div className="orn-savedate-1">
-                                    <div
-                                        className="image-wrap aos-init"
-                                        data-aos="fade-right"
-                                        data-aos-duration="1200"
-                                        data-aos-delay="1200"
-                                    >
-                                        <img
-                                            src="/image/orn-tree-6.png"
-                                            alt="orn"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="orn-savedate-2">
-                                    <div
-                                        className="image-wrap aos-init"
-                                        data-aos="fade-right"
-                                        data-aos-duration="1200"
-                                        data-aos-delay="1200"
-                                    >
-                                        <img
-                                            src="/image/orn-bird.png"
-                                            alt="orn"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="save-date-body">
-                                <h1
-                                    className="save-date-title aos-init"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1000"
-                                >
-                                    Countdown
-                                </h1>
-                                <div
-                                    className="save-date-box aos-init"
-                                    data-aos="zoom-out"
-                                    data-aos-duration="1200"
-                                    data-aos-delay="200"
-                                >
-                                    <Countdown />
-                                    <div
-                                        className="add-to-calendar-wrap aos-init"
-                                        data-aos="fade-up"
-                                        data-aos-duration="1000"
-                                        data-aos-delay="800"
-                                    >
-                                        <a
-                                            className="add-to-calendar"
-                                            href="https://calendar.app.google/gfp8xDN8VPpeZdVW9"
-                                            target="_blank"
-                                            rel="nofollow"
-                                            id="addToCalendar"
-                                        >
-                                            Add to Calendar{" "}
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1191,7 +1094,7 @@ export default function Home() {
                                                             data-aos-delay="450"
                                                             data-aos-anchor-placement="top-bottom"
                                                         >
-                                                            15:30 - 17:00
+                                                            16:00 - 17:00
                                                         </p>
                                                     </div>
                                                     <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" />
@@ -1219,7 +1122,7 @@ export default function Home() {
                                                             data-aos-delay="450"
                                                             data-aos-anchor-placement="top-bottom"
                                                         >
-                                                            15:30 - 17:00
+                                                            19:00 - 21:00
                                                         </p>
                                                     </div>
                                                 </div>
@@ -1487,6 +1390,75 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
+                    <section className="save-date-wrap">
+                        <div
+                            className="save-date aos-init"
+                            data-aos="zoom-out"
+                            data-aos-duration="1200"
+                        >
+                            <div className="ornaments-wrapper">
+                                <div className="orn-savedate-1">
+                                    <div
+                                        className="image-wrap aos-init"
+                                        data-aos="fade-right"
+                                        data-aos-duration="1200"
+                                        data-aos-delay="1200"
+                                    >
+                                        <img
+                                            src="/image/orn-tree-6.png"
+                                            alt="orn"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="orn-savedate-2">
+                                    <div
+                                        className="image-wrap aos-init"
+                                        data-aos="fade-right"
+                                        data-aos-duration="1200"
+                                        data-aos-delay="1200"
+                                    >
+                                        <img
+                                            src="/image/orn-bird.png"
+                                            alt="orn"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="save-date-body">
+                                <h1
+                                    className="save-date-title aos-init"
+                                    data-aos="zoom-in"
+                                    data-aos-duration="1000"
+                                >
+                                    Countdown
+                                </h1>
+                                <div
+                                    className="save-date-box aos-init"
+                                    data-aos="zoom-out"
+                                    data-aos-duration="1200"
+                                    data-aos-delay="200"
+                                >
+                                    <Countdown />
+                                    <div
+                                        className="add-to-calendar-wrap aos-init"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="800"
+                                    >
+                                        <a
+                                            className="add-to-calendar"
+                                            href="https://calendar.app.google/gfp8xDN8VPpeZdVW9"
+                                            target="_blank"
+                                            rel="nofollow"
+                                            id="addToCalendar"
+                                        >
+                                            Add to Calendar{" "}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <section className="wedding-gift-wrap">
                         <div className="wedding-gift-inner">
                             <div
@@ -1596,9 +1568,9 @@ export default function Home() {
                                             data-aos="fade-up"
                                             data-aos-duration="1200"
                                         >
-                                            Silakan cek di bawah ini untuk
-                                            memudahkan Anda menikmati pernikahan
-                                            kami!
+                                            Silakan klik fitur di bawah ini
+                                            untuk memudahkan Anda dalam
+                                            menikmati acara pernikahan kami!
                                         </p>
                                     </div>
                                     <div className="wedding-gift-body">

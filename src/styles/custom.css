@@ -19,7 +19,7 @@ body.hasnaa-hilman {
     --body-text-style: normal;
     --body-text-weight: 500;
     --body-text-size: calc(3.75vw + 0.384px);
-    --body-main-text-size: calc(4.5vw + 0.384px);
+    --body-main-text-size: calc(4vw + 0.384px);
     --main-text-size: calc(3.5vw + 0.384px);
     --body-text-lettercase: none;
 
@@ -2405,7 +2405,7 @@ section.cover .inner .foot .torsvp__btn:hover {
     padding: 40px 24px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 14px;
 }
 
 /* Details */
