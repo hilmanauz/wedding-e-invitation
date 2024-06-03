@@ -396,12 +396,12 @@ export default function Home() {
                                         data-aos-delay="300"
                                     >
                                         <img
-                                            src="/image/HH1.png"
+                                            src="/image/HH2.png"
                                             alt=""
                                             className="logo"
                                         />
                                     </div>
-                                    <h1
+                                    {/* <h1
                                         data-aos="zoom-in"
                                         data-aos-duration="1200"
                                         data-aos-delay="700"
@@ -410,7 +410,7 @@ export default function Home() {
                                         )}
                                     >
                                         Hasnaa &amp; Hilman
-                                    </h1>
+                                    </h1> */}
                                 </div>
                                 <div className="details">
                                     <div
@@ -594,7 +594,7 @@ export default function Home() {
                                     data-aos-duration="1200"
                                     data-aos-delay="500"
                                 >
-                                    <img src="/image/HH2.png" alt="" />
+                                    <img src="/image/HH1.png" alt="" />
                                 </div>
                             </div>
                             <div className="head">
@@ -655,7 +655,7 @@ export default function Home() {
                                     </p>
                                 </div>
                                 <p
-                                    className="couple-description aos-init"
+                                    className="couple-description aos-init pt-1.5"
                                     data-aos="fade-up"
                                     data-aos-duration="1000"
                                 >
@@ -1094,7 +1094,7 @@ export default function Home() {
                                                             data-aos-delay="450"
                                                             data-aos-anchor-placement="top-bottom"
                                                         >
-                                                            16:00 - 17:00
+                                                            16:00
                                                         </p>
                                                     </div>
                                                     <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" />
