@@ -81,7 +81,8 @@ export function ChatList() {
                         data-aos-duration="1200"
                         data-aos-delay="200"
                     >
-                        Wishing us Sakinah, Mawaddah, Warahmah . . .
+                        Kalian bisa tulis kata-kata ucapan dan doa untuk kita
+                        berdua disini yaaa♡
                     </p>{" "}
                 </div>
                 <div className="wedding-wish-body">

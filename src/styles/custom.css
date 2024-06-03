@@ -9,6 +9,7 @@ body.hasnaa-hilman {
     --heading-style: normal;
     --heading-weight: 400;
     --heading-size: calc(9vw + 0.864px);
+    --heading-count-size: calc(7vw + 0.864px);
     --heading-sign-size: calc(2vw + 0.864px);
     --heading-lettercase: none;
 
@@ -17,6 +18,7 @@ body.hasnaa-hilman {
     --body-text-style: normal;
     --body-text-weight: 500;
     --body-text-size: calc(3.75vw + 0.384px);
+    --body-main-text-size: calc(5.5vw + 0.384px);
     --main-text-size: calc(3.5vw + 0.384px);
     --body-text-lettercase: none;
 
@@ -83,6 +85,8 @@ body.hasnaa-hilman {
 @media (min-width: 560px) and (max-width: 960px) {
     body.hasnaa-hilman {
         --heading-size: 44px;
+        --heading-count-size: 34px;
+        --body-main-text-size: 20px;
         --body-text-size: 18px;
         --main-text-size: 15px;
     }
@@ -91,6 +95,8 @@ body.hasnaa-hilman {
 @media (min-width: 961px) {
     body.hasnaa-hilman {
         --heading-size: 44px;
+        --heading-count-size: 34px;
+        --body-main-text-size: 20px;
         --body-text-size: 18px;
         --main-text-size: 15px;
     }
@@ -653,14 +659,14 @@ section.cover .inner .head .prime-title {
         font-size: calc(var(--heading-size) + var(--fs-extra-6));
     }
     section.cover .inner .head .top-text {
-        font-size: calc(var(--body-text-size)) !important;
+        font-size: calc(var(--body-main-text-size)) !important;
     }
     section.cover .inner .head .bottom-text {
         font-size: calc(var(--body-text-size)) !important;
     }
 }
 section.cover .inner .head .top-text {
-    font-size: calc(var(--body-text-size) + var(--fs-extra-1));
+    font-size: calc(var(--body-main-text-size) + var(--fs-extra-1));
 }
 
 section.cover .inner .head .bottom-text {
@@ -1076,7 +1082,7 @@ section.cover .inner .foot .torsvp__btn:hover {
 
 .save-date-body .save-date-title {
     font-family: var(--heading-family);
-    font-size: calc(var(--heading-size));
+    font-size: calc(var(--heading-count-size));
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
@@ -2422,6 +2428,7 @@ section.cover .inner .foot .torsvp__btn:hover {
 }
 
 .footnote .top-text {
+    font-size: calc(var(--body-main-text-size)) !important;
     color: var(--text-primary);
 }
 .footnote .bottom-text {

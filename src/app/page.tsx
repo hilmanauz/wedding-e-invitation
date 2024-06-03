@@ -423,7 +423,7 @@ export default function Home() {
                                         data-aos-delay="850"
                                     >
                                         <div className="py-3 w-[60%] bg-white bg-opacity-75 rounded-md">
-                                            <p>Dear:</p>
+                                            <p>Kepada Yth.</p>
                                             <p className="!font-bold text-pretty">
                                                 {data?.Nama}
                                             </p>
@@ -604,7 +604,7 @@ export default function Home() {
                                     data-aos-duration="1000"
                                     data-aos-delay="150"
                                 >
-                                    Welcome to Our New Beginning
+                                    The wedding of
                                 </p>{" "}
                                 <h1
                                     className="prime-title"
@@ -624,8 +624,9 @@ export default function Home() {
                                     data-aos-duration="1000"
                                     data-aos-delay="150"
                                 >
-                                    Join us in celebrating our love. Your
-                                    presence would be truly cherished.
+                                    Bergabunglah dengan kami dalam merayakan
+                                    cinta kami. Kehadiran Anda akan sangat kami
+                                    hargai.
                                 </p>{" "}
                             </div>
                             <div
@@ -639,26 +640,30 @@ export default function Home() {
                     <section className="couple-wrap">
                         <div className="couple">
                             <div className="couple-head">
-                                <div className="orn-bismillah">
-                                    <div
-                                        className="image-wrap aos-init"
-                                        data-aos="zoom-in"
+                                <div
+                                    className="image-wrap aos-init"
+                                    data-aos="zoom-in"
+                                    data-aos-duration="1000"
+                                    data-aos-delay="600"
+                                >
+                                    <p
+                                        className="couple-description aos-init !text-[#634a38] !text-[25px] md:!text-[30px]"
+                                        data-aos="fade-up"
                                         data-aos-duration="1000"
-                                        data-aos-delay="600"
                                     >
-                                        <img
-                                            src="/image/bismillah-min.png"
-                                            alt="bismillah"
-                                        />
-                                    </div>
+                                        ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ
+                                        ٱللَّٰهِ وَبَرَكَاتُهُ
+                                    </p>
                                 </div>
                                 <p
                                     className="couple-description aos-init"
                                     data-aos="fade-up"
                                     data-aos-duration="1000"
                                 >
-                                    With the grace and blessing from Allah SWT,
-                                    We warmly invite you to the wedding of
+                                    Dengan memohon Rahmat dan Ridho Allah Azza
+                                    Wa Jalla, tanpa mengurangi rasa hormat kami
+                                    mengundang Bapak/Ibu/Saudara/i sekalian
+                                    untuk menghadiri acara pernikahan kami:
                                 </p>{" "}
                             </div>
                             <div className="couple-body  bride-first   ">
@@ -691,12 +696,12 @@ export default function Home() {
                                             Hilman Auzan Mulyono
                                         </p>{" "}
                                         <p
-                                            className="couple-parents aos-init"
+                                            className="couple-parents aos-init bg-gradient-to-l from-slate-100 rounded-md"
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
-                                            Son of Mr. S. Mulyono Subagya &amp;
-                                            Mrs. I.G.A.A.N Srilaksmi
+                                            Putra dari Bpk. S. Mulyono Subagya
+                                            &amp; Ibu I.G.A.A.N Srilaksmi
                                         </p>
                                         <div
                                             className="couple-link-wrap aos-init"
@@ -821,11 +826,11 @@ export default function Home() {
                                             Hasnaa Brilian Muslimah
                                         </p>{" "}
                                         <p
-                                            className="couple-parents aos-init"
+                                            className="couple-parents aos-init bg-gradient-to-r from-slate-100 rounded-md pl-3"
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
-                                            Daughter of Mr. Djadono &amp; Mrs.
+                                            Putri dari Bpk. Djadono &amp; Ibu
                                             Fenny Widyaningrum
                                         </p>
                                         <div
@@ -998,9 +1003,9 @@ export default function Home() {
                                     data-aos="fade-up"
                                     data-aos-duration="1200"
                                 >
-                                    Together by two families, we cordially
-                                    request the honor of your presence at the
-                                    celebration of the wedding day
+                                    Bersama-sama oleh dua keluarga, kami meminta
+                                    kehormatan atas kehadiran Anda di perayaan
+                                    hari pernikahan
                                 </p>{" "}
                             </div>
                             <div className="agenda-body">
@@ -1027,14 +1032,14 @@ export default function Home() {
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
-                                            Saturday,
+                                            Sabtu,
                                         </h3>
                                         <h2
                                             className="event-date aos-init"
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
-                                            29 June 2024
+                                            29 Juni 2024
                                         </h2>
                                     </div>
                                     <div className="activity-wrap  same-location ">
@@ -1592,8 +1597,9 @@ export default function Home() {
                                             data-aos="fade-up"
                                             data-aos-duration="1200"
                                         >
-                                            Kindly check down below to make it
-                                            easier for you to enjoy our wedding!
+                                            Silakan cek di bawah ini untuk
+                                            memudahkan Anda menikmati pernikahan
+                                            kami!
                                         </p>
                                     </div>
                                     <div className="wedding-gift-body">
@@ -1801,13 +1807,9 @@ export default function Home() {
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                             >
-                                {` "And among His signs is this, that He created
-                                for you mates from among yourselves, that you
-                                may dwell in tranquility with them,`}
+                                {` "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri,`}
                                 <br />
-                                {`and He has put love and mercy between your
-                                (heart): verily in that are Signs that those
-                                who reflect."`}
+                                {`agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."`}
                                 <br />
                                 <br />
                                 {`(Quran 30:21)`}
@@ -1916,7 +1918,7 @@ export default function Home() {
                                 data-aos-duration="1200"
                                 data-aos-delay="100"
                             >
-                                Welcome to Our New Beginning
+                                The wedding of
                             </p>
                             <h2
                                 className="footnote-title aos-init"
@@ -1936,8 +1938,8 @@ export default function Home() {
                                 data-aos-duration="1200"
                                 data-aos-delay="400"
                             >
-                                Join us in celebrating our love. Your presence
-                                would be truly cherished.
+                                Bergabunglah dengan kami dalam merayakan cinta
+                                kami. Kehadiran Anda akan sangat kami hargai.
                             </p>
                         </div>
                     </section>

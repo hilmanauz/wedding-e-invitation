@@ -22,10 +22,10 @@ export function Countdown() {
             const duration = moment.duration(moment(date).subtract(now));
 
             setDurations({
-                days: duration.days() > 0 ? duration.days() : 0,
-                hours: duration.hours() > 0 ? duration.hours() : 0,
-                minutes: duration.minutes() > 0 ? duration.minutes() : 0,
-                seconds: duration.seconds() > 0 ? duration.seconds() : 0,
+                hari: duration.days() > 0 ? duration.days() : 0,
+                jam: duration.hours() > 0 ? duration.hours() : 0,
+                menit: duration.minutes() > 0 ? duration.minutes() : 0,
+                detik: duration.seconds() > 0 ? duration.seconds() : 0,
             });
         }, 1000);
 

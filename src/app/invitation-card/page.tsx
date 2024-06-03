@@ -175,8 +175,8 @@ export default function InvitationCard() {
                                     data-aos-delay="150"
                                 >
                                     <p className="quote-caption text-center">
-                                        Please show this QR-code for your
-                                        attendant!
+                                        Mohon tunjukkan QR-code anda ke penerima
+                                        tamu!
                                     </p>
                                 </div>
                             </div>
