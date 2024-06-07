@@ -155,7 +155,9 @@ export default function InvitationCard() {
                                                 process.env
                                                     .NEXT_PUBLIC_BASE_URL ||
                                                 "http://localhost:3000"
-                                            }/confirmation?to=${data?.Nama}`}
+                                            }/confirmation?to=${data?.Nama.split(
+                                                " "
+                                            ).join("%20")}`}
                                         />
                                     </div>
                                     <h4
