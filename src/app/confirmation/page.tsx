@@ -1,6 +1,5 @@
 "use client";
 import { classNames } from "@/utlis/classNames";
-import { useDataContext } from "@/utlis/data-provider";
 import { useQueryParams } from "@/utlis/query-params";
 import { LoadingOverlay } from "@mantine/core";
 import Aos from "aos";
@@ -10,7 +9,7 @@ import useSWR from "swr";
 
 export default function Confirmation() {
     const [firstState, setFirstState] = React.useState(false);
-    const [messageStatus, setMessageStatus] = React.useState("");
+    const [messageStatus, setMessageStatus] = React.useState<any>();
     React.useEffect(() => {
         Aos.init();
         setFirstState(true);
@@ -21,41 +20,55 @@ export default function Confirmation() {
         "xc-token": string;
     }>();
     const xcToken = queryParams.get("xc-token");
+    const [xcTokenStorage, setXcStorage] = React.useState<string | null>();
     React.useEffect(() => {
+        localStorage && setXcStorage(localStorage?.getItem("xc-token"));
         if (xcToken) {
             localStorage.setItem("xc-token", xcToken);
             removeQueryParams(["xc-token"]);
             setMessageStatus("You're an admin!");
         }
     }, [removeQueryParams, xcToken]);
-    const { setData } = useDataContext();
     const { error, data } = useSWR(
-        [queryParams.get("to"), xcToken],
+        [queryParams.get("to"), xcTokenStorage],
         async ([to, token]) => {
             if (!token) return;
             const { data } = await axios.get(
-                `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
+                `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
                 {
                     headers: {
                         "xc-token": token,
                     },
                 }
             );
-            setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
-            return data;
+            return data.pageInfo.totalRows !== 0 ? data.list?.[0] : {};
         }
     );
 
-    const { isLoading } = useSWR([data], async ([data]) => {
-        if (!data) return;
-        await axios.post(
-            `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan/${data.Id}`,
-            {
-                absensi: true,
-            }
-        );
-        setMessageStatus(`Thanks ${data.Nama} for confirmation attendant!`);
-    });
+    const { isLoading } = useSWR(
+        [data, xcTokenStorage],
+        async ([data, token]) => {
+            if (!data) return;
+            await axios.patch(
+                `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan/${data.Id}`,
+                {
+                    absensi: true,
+                },
+                {
+                    headers: {
+                        "xc-token": token,
+                    },
+                }
+            );
+            setMessageStatus(
+                <React.Fragment>
+                    Thanks <br />
+                    <p className="!text-lg">{data.Nama}</p> <br /> for
+                    confirmation attendant!
+                </React.Fragment>
+            );
+        }
+    );
 
     return (
         <section className="kat-page__side-to-side !h-screen">
@@ -187,18 +200,6 @@ export default function Confirmation() {
                                         )}
                                     </div>
                                 </div>
-                                {data && (
-                                    <div
-                                        className="quote-wrap !p-3 max-w-[250px] aos-init"
-                                        data-aos="zoom-in"
-                                        data-aos-duration="1000"
-                                        data-aos-delay="150"
-                                    >
-                                        <p className="quote-caption text-center">
-                                            {data.Nama}
-                                        </p>
-                                    </div>
-                                )}
                             </div>
                         </div>
                     </div>
