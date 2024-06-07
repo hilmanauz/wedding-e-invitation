@@ -32,6 +32,7 @@ export default function Confirmation() {
     const { error, data } = useSWR(
         [queryParams.get("to"), xcToken],
         async ([to, token]) => {
+            if (!token) return;
             const { data } = await axios.get(
                 `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
                 {
@@ -186,16 +187,18 @@ export default function Confirmation() {
                                         )}
                                     </div>
                                 </div>
-                                <div
-                                    className="quote-wrap !p-3 max-w-[250px] aos-init"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="150"
-                                >
-                                    <p className="quote-caption text-center">
-                                        {data?.Nama}
-                                    </p>
-                                </div>
+                                {data && (
+                                    <div
+                                        className="quote-wrap !p-3 max-w-[250px] aos-init"
+                                        data-aos="zoom-in"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="150"
+                                    >
+                                        <p className="quote-caption text-center">
+                                            {data.Nama}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
