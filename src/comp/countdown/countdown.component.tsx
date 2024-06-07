@@ -8,18 +8,16 @@ export function Countdown() {
     React.useEffect(() => {
         let interval = setInterval(() => {
             const now = moment();
-            const date = moment()
-                .set({
-                    date: 29,
-                    year: 2024,
-                    month: 6,
-                    hours: 19,
-                    minute: 0,
-                    second: 0,
-                })
-                .format("YYYY-MM-DD hh:mm:ss");
+            const targetDate = moment({
+                date: 29,
+                year: 2024,
+                month: 5,
+                hours: 19,
+                minute: 0,
+                second: 0,
+            });
             // @ts-ignore
-            const duration = moment.duration(moment(date).subtract(now));
+            const duration = moment.duration(targetDate.diff(now));
 
             setDurations({
                 hari: duration.days() > 0 ? duration.days() : 0,

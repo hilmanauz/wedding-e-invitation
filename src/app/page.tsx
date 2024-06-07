@@ -401,7 +401,7 @@ export default function Home() {
                                             className="logo"
                                         />
                                     </div>
-                                    {/* <h1
+                                    <p
                                         data-aos="zoom-in"
                                         data-aos-duration="1200"
                                         data-aos-delay="700"
@@ -409,8 +409,19 @@ export default function Home() {
                                             test && "aos-init aos-animate"
                                         )}
                                     >
+                                        Wedding Invitation
+                                    </p>
+                                    <h1
+                                        data-aos="zoom-in"
+                                        data-aos-duration="1200"
+                                        data-aos-delay="700"
+                                        className={classNames(
+                                            "!capitalize",
+                                            test && "aos-init aos-animate"
+                                        )}
+                                    >
                                         Hasnaa &amp; Hilman
-                                    </h1> */}
+                                    </h1>
                                 </div>
                                 <div className="details">
                                     <div
@@ -640,7 +651,7 @@ export default function Home() {
                         <div className="couple">
                             <div className="couple-head">
                                 <div
-                                    className="image-wrap aos-init"
+                                    className="image-wrap flex flex-col aos-init"
                                     data-aos="zoom-in"
                                     data-aos-duration="1000"
                                     data-aos-delay="600"
@@ -652,6 +663,31 @@ export default function Home() {
                                     >
                                         ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ
                                         ٱللَّٰهِ وَبَرَكَاتُهُ
+                                    </p>
+                                    <p
+                                        className="couple-description aos-init !text-xs !text-slate-600 pb-2"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                    >
+                                        (
+                                        {
+                                            "Assalamu'alaikum warahmatullahi wabarakatuh"
+                                        }
+                                        )
+                                    </p>
+                                    <p
+                                        className="couple-description aos-init !text-[#634a38] !text-[23px] md:!text-[30px]"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                    >
+                                        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                                    </p>
+                                    <p
+                                        className="couple-description aos-init !text-[12px] !text-slate-600 pb-2"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                    >
+                                        (Bismillahirrahmanirrahim)
                                     </p>
                                 </div>
                                 <p
@@ -1137,6 +1173,16 @@ export default function Home() {
                                                         Galea Belangi
                                                     </p>
                                                     <p
+                                                        className="event-hall aos-init !text-xs"
+                                                        data-aos="fade-up"
+                                                        data-aos-duration="1000"
+                                                        data-aos-delay="450"
+                                                        data-aos-anchor-placement="top-bottom"
+                                                    >
+                                                        (Rumah Perubahaan -
+                                                        Jakarta Escape)
+                                                    </p>
+                                                    <p
                                                         className="event-address aos-init"
                                                         data-aos="fade-up"
                                                         data-aos-duration="1000"
@@ -1431,6 +1477,7 @@ export default function Home() {
                                     data-aos-duration="1000"
                                 >
                                     Countdown
+                                    <p className="text-xs">29 Juni 2024</p>
                                 </h1>
                                 <div
                                     className="save-date-box aos-init"
@@ -1601,7 +1648,7 @@ export default function Home() {
                                                             className="aos-init"
                                                         >
                                                             <a
-                                                                href="https://noco.klabs.dev/download/noco/Project/image/image/7B3yZEICnbuL8aHOni.pdf"
+                                                                href="/map-jakarta-escape"
                                                                 target="_blank"
                                                             >
                                                                 <h4
@@ -1771,7 +1818,7 @@ export default function Home() {
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                             >
-                                <span>(Quran 30:21)</span>
+                                <span>(QS. Ar-Rum:21)</span>
                             </p>
                             <p
                                 className="quote-caption aos-init"
@@ -1783,7 +1830,7 @@ export default function Home() {
                                 {`agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."`}
                                 <br />
                                 <br />
-                                {`(Quran 30:21)`}
+                                {`(QS. Ar-Rum:21)`}
                             </p>
                         </div>
                     </section>
@@ -1883,14 +1930,23 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="footnote">
-                            <p
-                                className="top-text aos-init"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                                data-aos-delay="100"
-                            >
-                                جَزَاكُمُ اللهُ خَيْرًا كَثِيْرًا
-                            </p>
+                            <div>
+                                <p
+                                    className="top-text aos-init"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1200"
+                                    data-aos-delay="100"
+                                >
+                                    جَزَاكَ اللهُ خَيْرًا
+                                </p>
+                                <p
+                                    className="couple-description aos-init !text-[12px] !text-slate-600 pb-2"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                >
+                                    (jazakallah khairan)
+                                </p>
+                            </div>
                             <p
                                 className="footnote-title aos-init"
                                 data-aos="fade-up"
@@ -1901,15 +1957,28 @@ export default function Home() {
                                 kami apabila Bapak/Ibu/Saudara/i berkenan hadir
                                 untuk memberikan doa restu kepada kami
                             </p>
-                            <p
-                                className="bottom-text aos-init"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                                data-aos-delay="400"
-                            >
-                                وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ
-                                وَبَرَكَاتُهُ
-                            </p>
+                            <div>
+                                <p
+                                    className="bottom-text aos-init"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1200"
+                                    data-aos-delay="400"
+                                >
+                                    وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ
+                                    وَبَرَكَاتُهُ
+                                </p>
+                                <p
+                                    className="couple-description aos-init !text-[12px] !text-slate-600 pb-2"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                >
+                                    (
+                                    {
+                                        "Wassalamu'alaikum Warahmatullahi Wabarakatuh"
+                                    }
+                                    )
+                                </p>
+                            </div>
                         </div>
                     </section>
                     <section className="footer">

@@ -41,6 +41,13 @@ export function ChatList() {
         }
     );
     const { register, handleSubmit, reset } = useForm();
+    React.useEffect(() => {
+        if (!AccountData) return;
+        reset({
+            nama: AccountData.Nama,
+            ucapan: "",
+        });
+    }, [AccountData, reset]);
     const onSubmit = async (formData: Record<string, any>) => {
         setSubmitLoading(true);
         try {
@@ -52,7 +59,7 @@ export function ChatList() {
             setPagination(0);
             await mutate();
             reset({
-                nama: "",
+                nama: AccountData?.Nama,
                 ucapan: "",
             });
             setValue("Bersedia Hadir");
@@ -224,6 +231,9 @@ export function ChatList() {
                                 Id: number;
                                 nama: string;
                                 CreatedAt: string;
+                                undangan: {
+                                    Nama: string;
+                                };
                                 ucapan: string;
                                 rencana_hadir:
                                     | "Bersedia Hadir"
@@ -239,7 +249,12 @@ export function ChatList() {
                                 >
                                     <div className="comment-head">
                                         <h3 className="comment-name !capitalize flex items-baseline gap-1.5">
-                                            {item.nama}{" "}
+                                            {item.nama}
+                                            {"  "}
+                                            {item.undangan &&
+                                                item.undangan.Nama !==
+                                                    item.nama &&
+                                                `[${item.undangan.Nama}]`}
                                             {item.rencana_hadir ===
                                             "Bersedia Hadir" ? (
                                                 <FaSquareCheck

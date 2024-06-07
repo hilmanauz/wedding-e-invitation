@@ -169,12 +169,12 @@ export default function InvitationCard() {
                                     </h4>
                                 </div>
                                 <div
-                                    className="quote-wrap !p-3 max-w-[250px] aos-init"
+                                    className="quote-wrap !p-3 max-w-[250px] aos-init border-b border-b-yellow-700"
                                     data-aos="zoom-in"
                                     data-aos-duration="1000"
                                     data-aos-delay="150"
                                 >
-                                    <p className="quote-caption text-center">
+                                    <p className="quote-caption text-center !font-semibold">
                                         Mohon tunjukkan QR-code anda ke penerima
                                         tamu!
                                     </p>

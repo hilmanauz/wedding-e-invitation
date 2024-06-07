@@ -497,13 +497,14 @@ section.top-cover .inner .head .logo-wrap {
 }
 section.top-cover .inner .head h1 {
     font-family: var(--heading-family);
-    font-size: calc(var(--heading-size));
+    font-size: calc(var(--heading-count-size));
     text-transform: uppercase;
     padding: 0px;
     margin: 0px auto;
 }
 section.top-cover .inner .head p {
     color: var(--text-primary);
+    font-size: calc(var(--body-text-size));
 }
 
 /* details */
@@ -1509,11 +1510,20 @@ section.cover .inner .foot .torsvp__btn:hover {
     color: var(--hover-button-text-primary);
 }
 
+@media (min-width: 0px) and (max-width: 750px) {
+    .event-link,
+    .activity-link {
+        padding: 8px 12px;
+        font-size: var(--main-text-size);
+    }
+}
+
 @media (min-width: 700px) and (max-width: 961px) {
     .activity-content {
         margin-top: 0;
         max-height: unset;
     }
+
     .event-details,
     .activity-details {
         padding: 0 35px;
