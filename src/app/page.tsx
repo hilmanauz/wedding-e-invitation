@@ -1937,14 +1937,14 @@ export default function Home() {
                                     data-aos-duration="1200"
                                     data-aos-delay="100"
                                 >
-                                    جَزَاكَ اللهُ خَيْرًا
+                                    جَزَاكُمُ اللهُ خَيْرًا كَثِيْرًا
                                 </p>
                                 <p
                                     className="couple-description aos-init !text-[12px] !text-slate-600 pb-2"
                                     data-aos="fade-up"
                                     data-aos-duration="1000"
                                 >
-                                    (jazakallah khairan)
+                                    (jazakumullah khairan katsiran)
                                 </p>
                             </div>
                             <p
