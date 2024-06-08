@@ -1944,7 +1944,7 @@ export default function Home() {
                                     data-aos="fade-up"
                                     data-aos-duration="1000"
                                 >
-                                    (jazakumullah khairan katsiran)
+                                    (Jazakumullah Khairan Katsiran)
                                 </p>
                             </div>
                             <p
