@@ -792,9 +792,9 @@ section.cover .inner .foot .torsvp__btn:hover {
     section.cover .inner {
         justify-content: center;
     }
-    section.cover .inner .head {
+    /* section.cover .inner .head {
         max-width: 280px;
-    }
+    } */
     section.cover .inner .logo {
         margin: 20% auto 25px;
     }
