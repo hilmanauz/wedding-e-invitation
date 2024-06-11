@@ -936,15 +936,6 @@ export default function Home() {
                                 >
                                     Wedding Day
                                 </h2>{" "}
-                                {/* <p
-                                    className="agenda-description aos-init"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1200"
-                                >
-                                    Bersama-sama oleh dua keluarga, kami meminta
-                                    kehormatan atas kehadiran Anda di perayaan
-                                    hari pernikahan
-                                </p>{" "} */}
                             </div>
                             <div className="agenda-body">
                                 <div className="event-item">
@@ -965,6 +956,20 @@ export default function Home() {
                                             </div>
                                         </div>
                                         <div className="divider"></div>
+                                        <p
+                                            className="agenda-description aos-init !text-[18px]"
+                                            data-aos="fade-up"
+                                            data-aos-duration="1200"
+                                        >
+                                            إِنْ شَاءَ ٱللَّٰهُ
+                                        </p>
+                                        <p
+                                            className="agenda-description aos-init !text-[12px] !text-slate-600 pb-2"
+                                            data-aos="fade-up"
+                                            data-aos-duration="1200"
+                                        >
+                                            (In syaa Allah)
+                                        </p>
                                         <h3
                                             className="event-day aos-init"
                                             data-aos="fade-up"
