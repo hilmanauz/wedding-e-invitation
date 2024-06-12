@@ -982,7 +982,7 @@ export default function Home() {
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                         >
-                                            29 Juni 2024
+                                            29 Juni 2024 / 22 Dzulhijjah 1445H
                                         </h2>
                                     </div>
                                     <div className="activity-wrap  same-location ">
@@ -1969,7 +1969,7 @@ export default function Home() {
                                     data-aos-duration="1200"
                                     data-aos-delay="400"
                                 >
-                                    وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ
+                                    وَعَلَيْكُمُ السَّلاَمُ وَرَحْمَةُ اللهِ
                                     وَبَرَكَاتُهُ
                                 </p>
                                 <p
@@ -1979,7 +1979,7 @@ export default function Home() {
                                 >
                                     (
                                     {
-                                        "Wassalamu'alaikum Warahmatullahi Wabarakatuh"
+                                        "Wa'alaikumussalam warahmatullahi wabarakatuh"
                                     }
                                     )
                                 </p>
