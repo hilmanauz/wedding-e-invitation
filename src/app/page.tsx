@@ -1706,32 +1706,45 @@ export default function Home() {
                                                                 Entrance Barcode
                                                             </h4>
                                                         </div>
-                                                        <div
-                                                            data-aos="fade-up"
-                                                            data-aos-duration="1200"
-                                                            className="aos-init"
-                                                        >
-                                                            <a
-                                                                href={`/invitation-card?to=${data?.Nama}`}
-                                                                target="_blank"
+                                                        {data?.Nama && (
+                                                            <div
+                                                                data-aos="fade-up"
+                                                                data-aos-duration="1200"
+                                                                className="aos-init"
                                                             >
-                                                                <h4
-                                                                    className="bank-account-number"
-                                                                    data-copy="2880135476"
+                                                                <a
+                                                                    href={`/invitation-card?to=${data.Nama.split(
+                                                                        " "
+                                                                    )
+                                                                        .join(
+                                                                            "%20"
+                                                                        )
+                                                                        .split(
+                                                                            "."
+                                                                        )
+                                                                        .join(
+                                                                            "%2E"
+                                                                        )}}`}
+                                                                    target="_blank"
                                                                 >
-                                                                    Invitation
-                                                                    Name
-                                                                    <span>
-                                                                        {
-                                                                            data?.Nama
-                                                                        }
-                                                                        <i className="ph ph-copy-simple">
-                                                                            <ImNewTab />
-                                                                        </i>
-                                                                    </span>
-                                                                </h4>
-                                                            </a>
-                                                        </div>
+                                                                    <h4
+                                                                        className="bank-account-number"
+                                                                        data-copy="2880135476"
+                                                                    >
+                                                                        Invitation
+                                                                        Name
+                                                                        <span>
+                                                                            {
+                                                                                data.Nama
+                                                                            }
+                                                                            <i className="ph ph-copy-simple">
+                                                                                <ImNewTab />
+                                                                            </i>
+                                                                        </span>
+                                                                    </h4>
+                                                                </a>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </div>

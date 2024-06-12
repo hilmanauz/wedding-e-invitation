@@ -150,15 +150,20 @@ export default function InvitationCard() {
                                     data-aos-delay="150"
                                 >
                                     <div className="icon-wrap">
-                                        <QRCodeSVG
-                                            value={`${
-                                                process.env
-                                                    .NEXT_PUBLIC_BASE_URL ||
-                                                "http://localhost:3000"
-                                            }/confirmation?to=${data?.Nama.split(
-                                                " "
-                                            ).join("%20")}`}
-                                        />
+                                        {data?.Nama && (
+                                            <QRCodeSVG
+                                                value={`${
+                                                    process.env
+                                                        .NEXT_PUBLIC_BASE_URL ||
+                                                    "http://localhost:3000"
+                                                }/confirmation?to=${data.Nama.split(
+                                                    " "
+                                                )
+                                                    .join("%20")
+                                                    .split(".")
+                                                    .join("%2E")}`}
+                                            />
+                                        )}
                                     </div>
                                     <h4
                                         className="bank-account-number !text-sm flex flex-col !capitalize"
