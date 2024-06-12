@@ -125,15 +125,14 @@ export default function Home() {
         return () => window.removeEventListener("scroll", onScroll);
     }, [scrollDir]);
 
-    const peruntukan = React.useMemo(
-        () =>
-            data?.peruntukan.untuk === "ibubapak"
-                ? "putra"
-                : data?.peruntukan.untuk === "umiabi"
-                ? "putri"
-                : "",
-        [data?.peruntukan.untuk]
-    );
+    const peruntukan = React.useMemo(() => {
+        if (data?.peruntukan) return "";
+        return data?.peruntukan.untuk === "ibubapak"
+            ? "putra"
+            : data?.peruntukan.untuk === "umiabi"
+            ? "putri"
+            : "";
+    }, [data?.peruntukan]);
 
     return (
         <React.Fragment>
