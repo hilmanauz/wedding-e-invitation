@@ -74,7 +74,7 @@ export default function Home() {
         //@ts-ignore
         setAudio(document?.getElementById("audio"));
     }, []);
-    console.log(audio);
+
     React.useEffect(() => {
         (async () => {
             if (audio) {
@@ -445,7 +445,7 @@ export default function Home() {
                                         <div className="py-3 w-[60%] bg-white bg-opacity-75 rounded-md">
                                             <p>Kepada Yth.</p>
                                             <p className="!font-bold text-pretty">
-                                                {data?.Nama}
+                                                {data?.nama_undangan}
                                             </p>
                                         </div>
                                         <button
@@ -1492,7 +1492,9 @@ export default function Home() {
                                     data-aos-duration="1000"
                                 >
                                     Countdown
-                                    <p className="text-xs">29 Juni 2024</p>
+                                    <p className="text-xs">
+                                        29 Juni 2024 / 22 Dzulhijjah 1445H
+                                    </p>
                                 </h1>
                                 <div
                                     className="save-date-box aos-init"
@@ -1734,7 +1736,7 @@ export default function Home() {
                                                                         Name
                                                                         <span>
                                                                             {
-                                                                                data.Nama
+                                                                                data.nama_undangan
                                                                             }
                                                                             <i className="ph ph-copy-simple">
                                                                                 <ImNewTab />
