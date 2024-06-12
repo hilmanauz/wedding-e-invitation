@@ -125,6 +125,16 @@ export default function Home() {
         return () => window.removeEventListener("scroll", onScroll);
     }, [scrollDir]);
 
+    const peruntukan = React.useMemo(
+        () =>
+            data?.peruntukan.untuk === "ibubapak"
+                ? "putra"
+                : data?.peruntukan.untuk === "umiabi"
+                ? "putri"
+                : "",
+        [data?.peruntukan.untuk]
+    );
+
     return (
         <React.Fragment>
             <section className="kat-page__side-to-side">
@@ -698,8 +708,9 @@ export default function Home() {
                                     Dengan memohon Rahmat dan Ridho Allah Azza
                                     Wa Jalla, tanpa mengurangi rasa hormat, kami
                                     mengundang Bapak/Ibu/Saudara/i untuk
-                                    menghadiri acara pernikahan kami:
-                                </p>{" "}
+                                    menghadiri acara pernikahan {peruntukan}{" "}
+                                    kami:
+                                </p>
                             </div>
                             <div className="couple-body  bride-first   ">
                                 <div className="couple-info groom">
@@ -1622,7 +1633,8 @@ export default function Home() {
                                         >
                                             Silakan klik fitur di bawah ini
                                             untuk memudahkan Anda dalam
-                                            menikmati acara pernikahan kami!
+                                            menikmati acara pernikahan{" "}
+                                            {peruntukan} kami!
                                         </p>
                                     </div>
                                     <div className="wedding-gift-body">
@@ -1960,7 +1972,8 @@ export default function Home() {
                             >
                                 Merupakan suatu kehormatan dan kebahagiaan bagi
                                 kami apabila Bapak/Ibu/Saudara/i berkenan hadir
-                                untuk memberikan doa restu kepada kami
+                                untuk memberikan doa restu kepada {peruntukan}{" "}
+                                kami
                             </p>
                             <div>
                                 <p
