@@ -1725,7 +1725,7 @@ export default function Home() {
                                                                         )
                                                                         .join(
                                                                             "%2E"
-                                                                        )}}`}
+                                                                        )}`}
                                                                     target="_blank"
                                                                 >
                                                                     <h4
