@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import DataProvider from "@/utlis/data-provider";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
+import { Notifications } from "@mantine/notifications";
 
 export const metadata: Metadata = {
     title: "Hasnaa & Hilman | HH Wedding",
@@ -30,6 +31,7 @@ export default function RootLayout({
             </head>
             <body className={`hasnaa-hilman`}>
                 <MantineProvider>
+                    <Notifications />
                     <DataProvider>{children}</DataProvider>
                 </MantineProvider>
             </body>

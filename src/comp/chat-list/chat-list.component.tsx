@@ -4,7 +4,6 @@ import { Group, Radio } from "@mantine/core";
 import moment from "moment";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { AiFillCloseSquare } from "react-icons/ai";
 import { BiLoaderCircle } from "react-icons/bi";
 import { FaMinusSquare } from "react-icons/fa";
 import { FaSquareCheck, FaSquareXmark } from "react-icons/fa6";
@@ -20,11 +19,12 @@ export function ChatList() {
     const [pagination, setPagination] = React.useState(0);
     const { setData, data: AccountData } = useDataContext();
     const { data, mutate } = useSWR(
-        [pagination, limit],
+        [pagination, limit, "chat"],
         async ([pagination, limit]) => {
+            console.log(pagination);
             if (pagination) setMoreLoading(true);
             const { data } = await client.get(
-                `/Project/chat?limit=${limit}&sort=-CreatedAt&offset=${
+                `/Project/Chat?limit=${limit}&sort=-CreatedAt&offset=${
                     pagination * limit === 0
                         ? pagination * limit
                         : pagination * limit + 1
@@ -36,7 +36,6 @@ export function ChatList() {
         },
         {
             revalidateOnFocus: false,
-            revalidateIfStale: false,
             revalidateOnReconnect: false,
         }
     );
@@ -51,13 +50,13 @@ export function ChatList() {
     const onSubmit = async (formData: Record<string, any>) => {
         setSubmitLoading(true);
         try {
-            await client.post(`/Project/chat`, {
+            await client.post(`/Project/Chat`, {
                 ...formData,
-                rencana_hadir: value,
-                undangan_id: AccountData?.Id,
+                RencanaHadir: value,
+                UndanganId: AccountData?.Id,
             });
             setPagination(0);
-            await mutate();
+            pagination === 0 && (await mutate());
             reset({
                 nama: AccountData?.Nama,
                 ucapan: "",
@@ -229,66 +228,68 @@ export function ChatList() {
                         {comments?.map(
                             (item: {
                                 Id: number;
-                                nama: string;
+                                Nama: string;
                                 CreatedAt: string;
-                                undangan: {
+                                Undangan: {
                                     Nama: string;
                                 };
-                                ucapan: string;
-                                rencana_hadir:
+                                Ucapan: string;
+                                RencanaHadir:
                                     | "Bersedia Hadir"
                                     | "Mungkin Hadir"
                                     | "Tidak Bisa Hadir";
-                            }) => (
-                                <div
-                                    key={item.Id}
-                                    className="comment-item aos-init w-fit"
-                                    id="comment0"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1200"
-                                >
-                                    <div className="comment-head">
-                                        <h3 className="comment-name !capitalize flex items-baseline gap-1.5">
-                                            {item.nama}
-                                            {"  "}
-                                            {item.undangan &&
-                                                item.undangan.Nama !==
-                                                    item.nama &&
-                                                `[${item.undangan.Nama}]`}
-                                            {item.rencana_hadir ===
-                                            "Bersedia Hadir" ? (
-                                                <FaSquareCheck
-                                                    color="green"
-                                                    size={13}
-                                                />
-                                            ) : item.rencana_hadir ===
-                                              "Mungkin Hadir" ? (
-                                                <FaMinusSquare
-                                                    color="orange"
-                                                    size={13}
-                                                />
-                                            ) : item.rencana_hadir ===
-                                              "Tidak Bisa Hadir" ? (
-                                                <FaSquareXmark
-                                                    color="red"
-                                                    size={13}
-                                                />
-                                            ) : undefined}
-                                        </h3>
-                                        <small className="comment-date">
-                                            {moment(item.CreatedAt).format(
-                                                "DD MMM YYYY, hh:mm"
-                                            )}
-                                        </small>
+                            }) => {
+                                return (
+                                    <div
+                                        key={item.Id}
+                                        className="comment-item aos-init w-fit"
+                                        id="comment0"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1200"
+                                    >
+                                        <div className="comment-head">
+                                            <h3 className="comment-name !capitalize flex items-baseline gap-1.5">
+                                                {item.Nama}
+                                                {"  "}
+                                                {item.Undangan &&
+                                                    item.Undangan.Nama !==
+                                                        item.Nama &&
+                                                    `[${item.Undangan.Nama}]`}
+                                                {item.RencanaHadir ===
+                                                "Bersedia Hadir" ? (
+                                                    <FaSquareCheck
+                                                        color="green"
+                                                        size={13}
+                                                    />
+                                                ) : item.RencanaHadir ===
+                                                  "Mungkin Hadir" ? (
+                                                    <FaMinusSquare
+                                                        color="orange"
+                                                        size={13}
+                                                    />
+                                                ) : item.RencanaHadir ===
+                                                  "Tidak Bisa Hadir" ? (
+                                                    <FaSquareXmark
+                                                        color="red"
+                                                        size={13}
+                                                    />
+                                                ) : undefined}
+                                            </h3>
+                                            <small className="comment-date">
+                                                {moment(item.CreatedAt).format(
+                                                    "DD MMM YYYY, hh:mm"
+                                                )}
+                                            </small>
+                                        </div>
+                                        <div className="comment-body mb-3">
+                                            <p className="comment-caption">
+                                                {item.Ucapan}
+                                            </p>
+                                        </div>
+                                        <div className="border-b border-b-amber-600 border-opacity-40" />
                                     </div>
-                                    <div className="comment-body mb-3">
-                                        <p className="comment-caption">
-                                            {item.ucapan}
-                                        </p>
-                                    </div>
-                                    <div className="border-b border-b-amber-600 border-opacity-40" />
-                                </div>
-                            )
+                                );
+                            }
                         )}
                     </div>
                     {data?.pageInfo.totalRows > (pagination + 1) * limit && (

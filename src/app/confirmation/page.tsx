@@ -34,7 +34,7 @@ export default function Confirmation() {
         async ([to, token]) => {
             if (!token) return;
             const { data } = await axios.get(
-                `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
+                `https://noco.klabs.dev/api/v1/db/data/v1/Project/Undangan?limit=25&offset=0&where=(Nama,eq,${to})`,
                 {
                     headers: {
                         "xc-token": token,
@@ -50,9 +50,9 @@ export default function Confirmation() {
         async ([data, token]) => {
             if (!data) return;
             await axios.patch(
-                `https://noco.klabs.dev/api/v1/db/data/v1/Project/undangan/${data.Id}`,
+                `https://noco.klabs.dev/api/v1/db/data/v1/Project/Undangan/${data.Id}`,
                 {
-                    absensi: true,
+                    Absensi: true,
                 },
                 {
                     headers: {

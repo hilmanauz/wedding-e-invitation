@@ -21,7 +21,7 @@ export default function InvitationCard() {
     const { setData, data } = useDataContext();
     const {} = useSWR([queryParams.get("to")], async ([to]) => {
         const { data } = await client.get(
-            `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`
+            `/Project/Undangan?limit=25&offset=0&where=(Nama,eq,${to})`
         );
         setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
         return data;

@@ -61,7 +61,7 @@ export default function Home() {
 
     const {} = useSWR([queryParams.get("to")], async ([to]) => {
         const { data } = await client.get(
-            `/Project/undangan?limit=25&offset=0&where=(Nama,eq,${to})`
+            `/Project/Undangan?limit=25&offset=0&where=(Nama,eq,${to})`
         );
         setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
         return data;
@@ -445,7 +445,7 @@ export default function Home() {
                                         <div className="py-3 w-[60%] bg-white bg-opacity-75 rounded-md">
                                             <p>Kepada Yth.</p>
                                             <p className="!font-bold text-pretty">
-                                                {data?.nama_undangan}
+                                                {data?.NamaUndangan}
                                             </p>
                                         </div>
                                         <button
@@ -1736,7 +1736,7 @@ export default function Home() {
                                                                         Name
                                                                         <span>
                                                                             {
-                                                                                data.nama_undangan
+                                                                                data.NamaUndangan
                                                                             }
                                                                             <i className="ph ph-copy-simple">
                                                                                 <ImNewTab />
