@@ -1145,7 +1145,7 @@ export default function Home() {
                                                             data-aos-delay="450"
                                                             data-aos-anchor-placement="top-bottom"
                                                         >
-                                                            16:00
+                                                            Afternoon
                                                         </p>
                                                     </div>
                                                     <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" />
