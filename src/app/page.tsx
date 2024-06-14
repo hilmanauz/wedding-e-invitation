@@ -1121,7 +1121,7 @@ export default function Home() {
                                             </div>
                                             <div className="activity-content">
                                                 <div className="flex h-full items-center">
-                                                    {/* <div className="activity-head flex-auto w-full">
+                                                    <div className="activity-head flex-auto w-full">
                                                         <img
                                                             src="/image/gold-01.png"
                                                             alt="Agenda Icon"
@@ -1148,7 +1148,7 @@ export default function Home() {
                                                             16:00
                                                         </p>
                                                     </div>
-                                                    <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" /> */}
+                                                    <div className="border-r-2 border-[#634a38] border-opacity-40 h-[100px]" />
                                                     <div className="activity-head flex-auto w-full">
                                                         <img
                                                             src="/image/gold-02.png"
