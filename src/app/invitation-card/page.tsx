@@ -19,13 +19,19 @@ export default function InvitationCard() {
         showQR: boolean;
     }>();
     const { setData, data } = useDataContext();
-    const {} = useSWR([queryParams.get("to")], async ([to]) => {
-        const { data } = await client.get(
-            `/Project/Undangan?limit=25&offset=0&where=(Nama,eq,${to})`
-        );
-        setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
-        return data;
-    });
+    const {} = useSWR(
+        [queryParams.get("to")],
+        async ([to]) => {
+            const { data } = await client.get(
+                `/Project/Undangan?limit=25&offset=0&where=(Nama,eq,${to})`
+            );
+            setData(data.pageInfo.totalRows !== 0 ? data.list?.[0] : {});
+            return data;
+        },
+        {
+            refreshInterval: 500,
+        }
+    );
 
     return (
         <section className="kat-page__side-to-side !h-screen">
@@ -143,49 +149,73 @@ export default function InvitationCard() {
                                 </div>
                             </div>
                             <div className="protocol-item-wrap flex-auto h-full flex flex-col items-center">
-                                <div
-                                    className="protocol-item aos-init !pb-2"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="150"
-                                >
-                                    <div className="icon-wrap">
-                                        {data?.Nama && (
-                                            <QRCodeSVG
-                                                value={`${
-                                                    process.env
-                                                        .NEXT_PUBLIC_BASE_URL ||
-                                                    "http://localhost:3000"
-                                                }/confirmation?to=${data.Nama.split(
-                                                    " "
-                                                )
-                                                    .join("%20")
-                                                    .split(".")
-                                                    .join("%2E")}`}
-                                            />
+                                {!data?.Absensi ? (
+                                    <React.Fragment>
+                                        <div
+                                            className={classNames(
+                                                "protocol-item !pb-2 aos-init"
+                                            )}
+                                            data-aos="zoom-in"
+                                            data-aos-duration="1000"
+                                            data-aos-delay="150"
+                                        >
+                                            <div className="icon-wrap">
+                                                {data?.Nama && (
+                                                    <QRCodeSVG
+                                                        value={`${
+                                                            process.env
+                                                                .NEXT_PUBLIC_BASE_URL ||
+                                                            "http://localhost:3000"
+                                                        }/confirmation?to=${data.Nama.split(
+                                                            " "
+                                                        )
+                                                            .join("%20")
+                                                            .split(".")
+                                                            .join("%2E")}`}
+                                                    />
+                                                )}
+                                            </div>
+                                            <h4
+                                                className="bank-account-number !text-sm flex flex-col !capitalize"
+                                                data-copy="2880135476"
+                                            >
+                                                Kepada Yth.{" "}
+                                                <span className="!text-base">
+                                                    {data?.Nama}
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div
+                                            className="quote-wrap !p-3 max-w-[250px] aos-init border-b border-b-yellow-700"
+                                            data-aos="zoom-in"
+                                            data-aos-duration="1000"
+                                            data-aos-delay="150"
+                                        >
+                                            <p className="quote-caption text-center !font-semibold">
+                                                Mohon tunjukkan QR-code anda ke
+                                                penerima tamu!
+                                            </p>
+                                        </div>
+                                    </React.Fragment>
+                                ) : (
+                                    <div
+                                        className={classNames(
+                                            "protocol-item !pb-2 items-center justify-center aos-init"
                                         )}
-                                    </div>
-                                    <h4
-                                        className="bank-account-number !text-sm flex flex-col !capitalize"
-                                        data-copy="2880135476"
+                                        data-aos="zoom-in"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="150"
                                     >
-                                        Kepada Yth.{" "}
-                                        <span className="!text-base">
-                                            {data?.Nama}
-                                        </span>
-                                    </h4>
-                                </div>
-                                <div
-                                    className="quote-wrap !p-3 max-w-[250px] aos-init border-b border-b-yellow-700"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="150"
-                                >
-                                    <p className="quote-caption text-center !font-semibold">
-                                        Mohon tunjukkan QR-code anda ke penerima
-                                        tamu!
-                                    </p>
-                                </div>
+                                        <h4 className="bank-account-number !text-sm flex flex-col !capitalize">
+                                            Terima Kasih!
+                                            <span className="!text-lg py-2">
+                                                {data?.Nama}
+                                            </span>
+                                            Atas kehadirannya
+                                            <p className="!text-[20px]">🙏</p>
+                                        </h4>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
